@@ -237,6 +237,10 @@ class AsyncCrawler:
     def scope(self):
         return self._scope
 
+    @property
+    def auth_credentials(self):
+        return self._auth_credentials
+
     @scope.setter
     def scope(self, value: int):
         if value not in Scope:

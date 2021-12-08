@@ -60,7 +60,8 @@ modules = [
     "mod_wapp",
     "mod_wp_enum",
     "mod_takeover",
-    "mod_ssl"
+    "mod_ssl",
+    "mod_http_redirection"
 ]
 
 # Modules that will be used if option -m isn't used
