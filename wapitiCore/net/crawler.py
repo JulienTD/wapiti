@@ -471,6 +471,10 @@ class AsyncCrawler:
         @type headers: dict
         @rtype: Page
         """
+        left_margin = '\t'
+        log_verbose(
+            f"{resource.http_repr(left_margin)}\n\tHeaders: {headers}\n\tFollow redirects: {follow_redirects}\n--"
+        )
         request = self.client.build_request("GET", resource.url, headers=headers, timeout=self._timeout)
         try:
             response = await self.client.send(
@@ -493,6 +497,10 @@ class AsyncCrawler:
         @type headers: dict
         @rtype: Page
         """
+        left_margin = '\t'
+        log_verbose(
+            f"{form.http_repr(left_margin)}\n\tHeaders: {headers}\n\tFollow redirects: {follow_redirects}\n--"
+        )
         form_headers = {}
         if not form.is_multipart:
             form_headers = {"Content-Type": form.enctype}
@@ -555,6 +563,10 @@ class AsyncCrawler:
         @type headers: dict
         @rtype: Page
         """
+        left_margin = '\t'
+        log_verbose(
+            f"{form.http_repr(left_margin)}\n\tHeaders: {headers}\n\tFollow redirects: {follow_redirects}\n--"
+        )
         form_headers = {}
         if isinstance(headers, dict) and headers:
             form_headers.update(headers)
